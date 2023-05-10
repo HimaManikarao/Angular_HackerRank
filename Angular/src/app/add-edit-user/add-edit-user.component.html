@@ -1,0 +1,67 @@
+<!-- <section>
+    <div class='pa-30'>
+        <form [formGroup]="userForm" novalidate (ngSubmit)="onSubmit()">
+            <div class='layout-column mb-15'>
+                <label htmlFor='firstName' class='mb-3'>First Name</label>
+                <input type='text' placeholder='Enter first name' name='firstName' formControlName="firstName"
+                    data-testid='firstNameInput' />
+            </div>
+            <div class='layout-column mb-15'>
+                <label htmlFor='lastName' class='mb-3'>Last Name</label>
+                <input type='text' placeholder='Enter last name' name='lastName' formControlName="lastName"
+                    data-testid='lastNameInput' />
+            </div>
+            <div class='layout-column mb-15'>
+                <label htmlFor='phone' class='mb-3'>Phone Number</label>
+                <input type='number' placeholder='Enter phone number' name='phone' formControlName="phone"
+                    data-testid='phoneInput' />
+            </div>
+            <div class='alert error mb-30' *ngIf="userForm.invalid && (userForm.dirty || userForm.touched)"
+                data-testid='validationAlert'>
+                Error: All fields are required and the phone number must contain 10 digits.
+            </div>
+            <div class='layout-row justify-content-end'>
+                <button type='button' class='' (click)="onCancel()" data-testid='cancelEditUserButton'>
+                    Cancel
+                </button>
+                <button type='submit' class='mx-0' [disabled]="userForm.invalid" data-testid='addEditButton'>
+                    Add/Edit User
+                </button>
+            </div>
+        </form>
+    </div>
+</section> -->
+
+<section>
+    <div class='pa-30'>
+        <form [formGroup]="userForm" novalidate (ngSubmit)="onSaveClicked()">
+            <div class='layout-column mb-15'>
+                <label htmlFor='firstName' class='mb-3'>First Name</label>
+                <input type='text' placeholder='Enter first name' name='firstName' formControlName="firstName"
+                    data-testid='firstNameInput' />
+            </div>
+            <div class='layout-column mb-15'>
+                <label htmlFor='lastName' class='mb-3'>Last Name</label>
+                <input type='text' placeholder='Enter last name' name='lastName' formControlName="lastName"
+                    data-testid='lastNameInput' />
+            </div>
+            <div class='layout-column mb-15'>
+                <label htmlFor='phone' class='mb-3'>Phone Number</label>
+                <input type='number' placeholder='Enter phone number' name='phone' formControlName="phone"
+                    data-testid='phoneInput' />
+            </div>
+            <!-- <div class='alert error mb-30' *ngIf="showValidationAlert">
+                Error: All fields are required and the phone number must contain 10 digits.
+            </div> -->
+            <div class='layout-row justify-content-end'>
+                <button type='button' class='' (click)="onCancelClicked()" data-testid='cancelEditUserButton'>
+                    Cancel
+                </button>
+                <button type='submit' class='mx-0' [disabled]="userForm.invalid" data-testid='addEditButton'>
+                    {{ user ? 'Edit User' : 'Add User' }}
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
+

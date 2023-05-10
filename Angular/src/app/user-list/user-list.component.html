@@ -1,0 +1,42 @@
+<section>
+    <h3 class="p-3 text-center">Users</h3>
+    <table class="table table-striped table-bordered" data-testid='userListTable'>
+        <thead>
+            <tr>
+                <th>
+                    First Name
+                </th>
+                <th>
+                    Last Name
+                </th>
+                <th>
+                    Phone Number
+                </th>
+                <th>
+                    Actions
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>
+                    {{user.firstName}}
+                </td>
+                <td>
+                    {{user.lastName}}
+                </td>
+                <td>
+                    {{user.phone}}
+                </td>
+                <td>
+                    <button type='button' class='' (click)="onEditClicked(user)">
+                        Edit
+                    </button>
+                    <button type='button' class='' (click)="onDeleteClicked(user)">
+                        Delete
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
